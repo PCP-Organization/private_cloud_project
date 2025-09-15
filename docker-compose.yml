@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  
+
+  pcp_db:
+    image: mongo:latest
+    container_name: pcp_db
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - "27017:27017"
+    
+    volumes:
+      - mongo_data:/data/db
+      - ./data:/docker-entrypoint-initdb.d
+
+  pcp_mongo_express_ui:
+      image: mongo-express:latest
+      container_name: pcp_mongo_express_ui
+      restart: unless-stopped
+      environment:
+        ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+        ME_CONFIG_MONGODB_ADMINPASSWORD: secret
+        ME_CONFIG_MONGODB_SERVER: pcp_db
+      ports:
+        - "8081:8081"
+      depends_on:
+      - pcp_db
+
+  pcp_backend:
+    build: ./pcp_backend
+    container_name: pcp_backend
+    restart: unless-stopped
+    ports:
+      - "8083:80"
+    depends_on:
+      - pcp_db
+  pcp_storage:
+    build:
+      context: ./pcp_storage
+    container_name: pcp_storage
+    ports:
+      - "8080:80"
+  frontend:
+    build: ./pcp_frontend
+    container_name: pcp_frontend
+    restart: unless-stopped
+    ports:
+      - "443:443"
+    volumes:
+      - ./pcp_frontend:/app
+      - ./pcp_frontend/certs:/app/certs
+    depends_on:
+      - pcp_storage
+      - pcp_backend
+    
+
+
+volumes:
+  mongo_data:
+  
+
+  

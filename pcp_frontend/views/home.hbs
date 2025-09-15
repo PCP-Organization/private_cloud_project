@@ -1,0 +1,18 @@
+{{#each daten}}
+  <div class="col-md-4 mb-4">
+    <div class="card h-100 shadow-sm">
+      <img src="{{bildurl}}" class="card-img-top" alt="{{name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">
+          Typ: {{typ}}<br>
+          RAM: {{ram}} GiB <br>
+          CPU: {{cpu}} vCPU <br>
+          OS: {{os}}<br>
+          Preis: {{preis}}€
+        </p>
+        <a href="#" class="btn btn-primary">Mehr erfahren</a>
+      </div>
+    </div>
+  </div>
+{{/each}}

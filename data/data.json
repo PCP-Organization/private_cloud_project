@@ -1,0 +1,57 @@
+[   {  
+        "name":"PCP1",
+        "typ":"t3micro",
+        "ram":1,
+        "cpu":2,
+        "os":"Amazon Linux 2023 kernel-6.12 AMI (64-Bit (x86),uefi-preferred)",
+        "ebs":"8 GiB, gp3, 3000 IOPS, unverschlüsselt",
+        "preis":0.0208,
+        "bildurl":"http://localhost:8080/pics/ami-micro.png"},
+    
+    {   
+        "name":"PCP2",
+        "typ":"t3micro",
+        "ram":1,
+        "cpu":2,
+        "os":"Ubuntu Server 24.04 LTS (HVM)(64-Bit (x86))",
+        "ebs":"8 GiB, gp3, 3000 IOPS, unverschlüsselt",
+        "preis":0.0243,
+        "bildurl":"http://localhost:8080/pics/ub-micro.png"},
+        
+    {   
+        "name":"PCP3",
+        "typ":"t3micro",
+        "ram":1,
+        "cpu":2,
+        "os":"Debian 12 (HVM)(64-Bit (x86))",
+        "ebs":"8 GiB, gp3, 3000 IOPS, unverschlüsselt",
+        "preis":0.0208,
+        "bildurl":"http://localhost:8080/pics/deb-micro.png"},
+        
+    {   
+        "name":"PCP4",
+        "typ":"t3nano",
+        "ram":0.5,
+        "cpu":2,
+        "os":"Amazon Linux 2023 kernel-6.12 AMI (64-Bit (x86),uefi-preferred)",
+        "ebs":"8 GiB, gp3, 3000 IOPS, unverschlüsselt",
+        "preis":0.0154,
+        "bildurl":"http://localhost:8080/pics/ami-nano.png"},
+        
+    {   
+        "name":"PCP5","typ":"t3nano",
+        "ram":0.5,"cpu":2,
+        "os":"Ubuntu Server 24.04 LTS (HVM)(64-Bit (x86))",
+        "ebs":"8 GiB, gp3, 3000 IOPS, unverschlüsselt",
+        "preis":0.0189,
+        "bildurl":"http://localhost:8080/pics/ub-nano.png"},
+        
+    {   
+        "name":"PCP6",
+        "typ":"t3nano",
+        "ram":0.5,"cpu":2,
+        "os":"Debian 12 (HVM)(64-Bit (x86))",
+        "ebs":"8 GiB, gp3, 3000 IOPS, unverschlüsselt",
+        "preis":0.0154,
+        "bildurl":"http://localhost:8080/pics/deb-nano.png"}
+    ]
